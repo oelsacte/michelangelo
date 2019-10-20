@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin:0;
+    padding: 0;
+}
+#footer {
+    background: #222222;
+    color: white;
+}
+
+.bg-header {
+    background: #F5F5F7;
+}
+
+.bg-gray{
+    background-color: #dbdbdb;
+}
+
+.logo {
+    position: relative;
+    width:243px; 
+    height:294px;
+}
+
+.logo-container {
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.text-header {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.portada{
+    background-image: url("./assets/img/michelangelo.jpg"); /*no-repeat fixed center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position:center center; 
+    min-height: 490px;
+    width: 100% ;
+    text-align: center;
+  
+ }
+
+
