@@ -1,0 +1,78 @@
+body {
+    margin:0;
+    padding: 0;
+}
+#footer {
+    background: #222222;
+    color: white;
+}
+
+.bg-header {
+    background: #F5F5F7;
+}
+
+.bg-gray{
+    background-color: #dbdbdb;
+}
+
+.logo {
+    position: relative;
+    width:243px; 
+    height:294px;
+}
+
+.logo-container {
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.text-header {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.portada{
+    background-image: url($img-portada); /*no-repeat fixed center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position:center center; 
+    min-height: 490px;
+    width: 100% ;
+    text-align: center;  
+ }
+
+ /* ESTILOS CARD */
+.bg-color:hover{
+    background-image: url("../../../assets/img/bg-cards.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    -moz-box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    color: white;
+    border: 3px solid blue;
+}
+
+.card {
+    height: 238px;
+    width: 269px;
+    border: 1px solid #e3e2e7;
+    font-weight: bold;
+}
+
+.card-text-bottom {
+    color: #82828c;
+    font-weight: normal;
+}
+
+.card .ml-2 .mr-2 .bg-color p {
+    color: #82828c;
+    font-weight: normal;
+}
+
+
