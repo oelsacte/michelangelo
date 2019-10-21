@@ -4,6 +4,7 @@ import { CustomValidators } from 'ng2-validation';
 import { LoginService } from '../login/login.service';
 import swal from 'sweetalert2';
 import { Persona } from '../models/persona';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-formulario',
@@ -30,7 +31,8 @@ export class FormularioComponent {
 
   public buildForm() {
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.minLength(2),
+      name: ['', [Validators.required,
+      Validators.minLength(2),
       Validators.maxLength(150),
       Validators.pattern(/^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$/)]],
       edad: ['', [Validators.required,
@@ -44,6 +46,16 @@ export class FormularioComponent {
 
   onSubmit() {
     console.log('reactiveForm', this.formGroup.value);
+    if (isNullOrUndefined(this.persona.nombre) || isNullOrUndefined(this.persona.edad) || isNullOrUndefined(this.persona.comentario)) {
+      swal(
+        {
+          type: 'error',
+          title: 'Error',
+          text: 'Por favor llene el formulario. Todos los campos son requeridos.'
+        }
+      );
+      return;
+    }
     this.loginService.verify().subscribe(resp => {
       swal({
         type: 'success',
