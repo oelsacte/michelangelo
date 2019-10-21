@@ -1,0 +1,37 @@
+<div class="card border-primary">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+    <form [formGroup]="formGroup">
+      <div class="form-group col-6 col-sm-6">
+        <input [(ngModel)]="persona.nombre" name="name" class="form-control" formControlName="name" type="text" name="name" placeholder="Nombre" />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+          <p *ngIf="formGroup.get('name').hasError('required')">El nombre es requerido.</p>
+          <p *ngIf="formGroup.get('name').hasError('minlength')">El nombre es muy corto.</p>
+          <p *ngIf="formGroup.get('name').hasError('maxlength')">El nombre es muy largo.</p>
+          <p *ngIf="formGroup.get('name').hasError('pattern')">El nombre sólo debe contener simbolos alfanuméricos</p>
+        </div>
+      </div>
+      <div class="form-group col-6 col-sm-6">
+        <input [(ngModel)]="persona.edad" name="edad" class="form-control" formControlName="edad" type="edad" placeholder="Edad" />
+        <div *ngIf="edad.invalid && (edad.dirty || edad.touched)">
+            <p *ngIf="formGroup.get('edad').hasError('required')">El nombre es requerido.</p>
+            <p *ngIf="formGroup.get('edad').hasError('max')">Su edad supera el límite requerido.</p>
+            <p *ngIf="edad.errors?.number">El campo Edad sólo admite números</p>
+          </div>
+      </div>
+      <div class="form-group col-6 col-sm-6">
+        <input [(ngModel)]="persona.comentario" name="comments" class="form-control" formControlName="comments" type="text" placeholder="Comentario" />
+        <div *ngIf="comments.invalid && (comments.dirty || comments.touched)">
+            <p *ngIf="formGroup.get('comments').hasError('required')">El nombre es requerido.</p>
+            <p *ngIf="formGroup.get('comments').hasError('maxlength')">Su edad supera el límite requerido.</p>
+          </div>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <input (click)="onSubmit()" type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="formGroup.invalid"
+          value="Registrar">
+      </div>
+    </form>
+  </div>
+</div>
+<app-visor [persona]="persona2"></app-visor>

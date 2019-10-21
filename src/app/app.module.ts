@@ -11,9 +11,14 @@ import { HeadingComponent } from './landing-page/heading/heading.component';
 import { CardBoardComponent } from './landing-page/card-board/card-board.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormularioComponent } from './formulario/formulario.component';
+import { CustomFormsModule } from 'ng2-validation';
+import { FormguardGuard } from './servicios/formguard.guard';
+import { AuthInterceptorService } from './servicios/auth-interceptor.service';
+import { VisorComponent } from './formulario/visor/visor.component';
 
 
 @NgModule({
@@ -25,16 +30,26 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselComponent,
     HeadingComponent,
     CardBoardComponent,
-    LoginComponent
+    LoginComponent,
+    FormularioComponent,
+    VisorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule 
+    ReactiveFormsModule,
+    HttpClientModule,
+    CustomFormsModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    FormguardGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
