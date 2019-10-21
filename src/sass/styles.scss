@@ -1,0 +1,202 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'variables';
+
+body {
+    margin:0;
+    padding: 0;
+}
+#footer {
+    background: $background-color-footer;
+    color: white;
+}
+
+.bg-header {
+    background: $background-color-header;
+}
+
+.bg-gray{
+    background-color: $background-color-gray;
+}
+
+.logo {
+    position: relative;
+    width:243px; 
+    height:294px;
+}
+
+.logo-text {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    z-index: 1000;
+}
+
+.logo-container {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+}
+
+.titulo {
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.titulo-position {
+    position: absolute;
+    bottom: 200px;
+    left: 80px;
+}
+
+.titulo-font-main {
+    font-size: 8vh;
+}
+
+.btn-titulo {
+    background-color: black;
+    outline-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.text-header {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.portada{
+    background-image: url($img-portada); /*no-repeat fixed center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position:center center; 
+    min-height: 490px;
+    width: 100% ;
+    text-align: center;  
+ }
+
+ /* ESTILOS CARD */
+.bg-color:hover{
+    background-image: url($img-card-hover);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    -moz-box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    box-shadow: -5px 27px 26px 1px rgba(0,0,0,0.21);
+    color: white;
+    border: 3px solid blue;
+}
+
+.card {
+    height: 238px;
+    width: 269px;
+    border: 1px solid $border-color-card;
+    font-weight: bold;
+}
+
+.card-text-bottom {
+    color: $font-color-card;
+    font-weight: normal;
+}
+
+.card .ml-2 .mr-2 .bg-color p {
+    color: $font-color-card;
+    font-weight: normal;
+}
+
+// ESTILOS CARRUSEL
+@media (max-width: 576px) { 
+    .msg-carousel {
+        position: absolute;
+        top: 63%;
+        left: 59%;
+        height: 100% !important;
+        width: 100% !important;
+        /* height: 364px;
+        width: 700px; */
+        border: 1px solid white;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+     }
+}
+.container {
+    position: relative;
+    text-align: center;
+  }
+  
+ .msg-carousel {
+    position: absolute;
+    top: 63%;
+    left: 59%;
+    height: 80%;
+    width: 50%;
+    border: 1px solid white;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+ }
+
+ .msg-title-carousel {
+    font-size: 3vh;
+    text-align: left;
+    font-weight: bold;
+    
+}
+
+.msg-text{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+.btn-landing {
+    color: black;
+    font-size: 1rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+ .carousel-control-prev-icon,
+ .carousel-control-next-icon {
+   height: 30px;
+   width: 30px;
+   outline: black;
+   background-size: 100%, 100%;
+   border: 2px solid black;
+   background-image: none;
+ }
+ 
+ .carousel-control-next-icon:after
+ {
+   content: '>';
+   font-size: 15px;
+   font-weight: bold;
+   color: black;
+ }
+ 
+ .carousel-control-prev-icon:after {
+   content: '<';
+   font-weight: bold;
+   font-size: 15px;
+   color: black;
+ }
+
+ img {
+     position: relative;
+     top: 63%;
+    left: 20%;
+    height: 364px;
+    width: 700px;
+ }
+
+
