@@ -16,14 +16,6 @@ export class LoginService {
     private router: Router,
     private http: HttpClient) { }
 
-  private isNoAutorizado(e): boolean {
-    if (e.status === 401 || e.status === 403) {
-      this.router.navigate(['/login']);
-      return true;
-    }
-    return false;
-  }
-
   public login(usuario: Usuario): Observable<any> {
     return this.http.post(this.END_POINT_LOGIN, usuario);
   }
