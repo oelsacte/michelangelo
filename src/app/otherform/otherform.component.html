@@ -1,0 +1,38 @@
+
+        <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group row">
+                <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nombre" id="" [(ngModel)]="cliente.nombre" #nombre="ngModel"><!-- required minlength="4"> -->
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="apellido" class="col-form-label col-sm-2">Apellido</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="apellido" id="" [(ngModel)]="cliente.apellido" #apellido="ngModel"> <!-- required-->
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-form-label col-sm-2">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="email" id="" [(ngModel)]="cliente.email" #email="ngModel"> <!--required email-->
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="card" class="col-form-label col-sm-2">Card</label>
+              <div class="col-sm-6">
+                <select name="card" [(ngModel)]="cliente.card">
+                  <option [ngValue]="objeto" *ngFor="let objeto of opciones">{{objeto.evento}}</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button">Crear</button>
+                </div>
+            </div>
+        </form>

@@ -1,3 +1,4 @@
+import { OtherformComponent } from './otherform/otherform.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -9,6 +10,7 @@ import { FormguardGuard } from './servicios/formguard.guard';
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'miform', component: OtherformComponent}
   {path: 'formulario', component: FormularioComponent, canActivate: [FormguardGuard]}
 ];
 @NgModule({

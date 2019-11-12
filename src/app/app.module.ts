@@ -19,6 +19,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { FormguardGuard } from './servicios/formguard.guard';
 import { AuthInterceptorService } from './servicios/auth-interceptor.service';
 import { VisorComponent } from './formulario/visor/visor.component';
+import { OtherformComponent } from './otherform/otherform.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { VisorComponent } from './formulario/visor/visor.component';
     CardBoardComponent,
     LoginComponent,
     FormularioComponent,
-    VisorComponent
+    VisorComponent,
+    OtherformComponent
   ],
   imports: [
     BrowserModule,
